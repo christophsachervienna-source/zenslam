@@ -96,6 +96,15 @@ class ApiService {
     bool debug = false,
     bool handleAuth = true,
   }) async {
+    // Short-circuit when no backend is configured
+    if (baseUrl.isEmpty) {
+      return ApiResponse(
+        success: false,
+        error: 'No backend configured',
+        statusCode: 0,
+      );
+    }
+
     try {
       // Build URL with query parameters
       Uri uri = Uri.parse('$baseUrl/$endpoint');
@@ -173,6 +182,15 @@ class ApiService {
     bool debug = false,
     bool handleAuth = true,
   }) async {
+    // Short-circuit when no backend is configured
+    if (baseUrl.isEmpty) {
+      return ApiResponse(
+        success: false,
+        error: 'No backend configured',
+        statusCode: 0,
+      );
+    }
+
     try {
       final Uri uri = Uri.parse('$baseUrl/$endpoint');
 
@@ -249,6 +267,15 @@ class ApiService {
     bool debug = false,
     bool handleAuth = true,
   }) async {
+    // Short-circuit when no backend is configured
+    if (baseUrl.isEmpty) {
+      return ApiResponse(
+        success: false,
+        error: 'No backend configured',
+        statusCode: 0,
+      );
+    }
+
     try {
       Uri uri = Uri.parse('$baseUrl/$endpoint');
 

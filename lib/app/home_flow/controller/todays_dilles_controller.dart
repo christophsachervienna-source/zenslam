@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:zenslam/core/const/shared_pref_helper.dart';
+import 'package:zenslam/core/data/mock_content_provider.dart';
 import 'package:zenslam/core/global_widegts/network_response.dart';
 import 'package:zenslam/app/home_flow/model/todays_dailies_model.dart';
 import 'package:flutter/material.dart';
@@ -73,26 +74,18 @@ class TodaysDillesController extends GetxController {
           'Dailies loaded: ${dailies.length} items, Has more: ${hasMore.value}',
         );
       } else {
-        errorMessage.value =
-            response.data['message'] ?? 'Failed to load dailies';
-        debugPrint('API Error: ${errorMessage.value}');
+        debugPrint('API Error: ${response.data['message']}');
         if (!loadMore) {
-          Get.snackbar(
-            'Internet Connection Error',
-            'Make sure you are connected to the internet',
-          );
-          dailies.clear();
+          dailies.value = MockContentProvider.getDailies();
+          hasMore.value = false;
         }
       }
     } catch (e) {
-      errorMessage.value = 'Error fetching dailies: $e';
-      debugPrint('Exception in fetchDailies: $e');
+      errorMessage.value = '';
+      debugPrint('Exception in fetchDailies: $e — using static fallback');
       if (!loadMore) {
-        Get.snackbar(
-          'Internet Connection Error',
-          'Make sure you are connected to the internet',
-        );
-        dailies.clear();
+        dailies.value = MockContentProvider.getDailies();
+        hasMore.value = false;
       }
     } finally {
       if (loadMore) {

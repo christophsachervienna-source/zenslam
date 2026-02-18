@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:zenslam/core/const/shared_pref_helper.dart';
+import 'package:zenslam/core/data/mock_content_provider.dart';
 import 'package:zenslam/core/global_widegts/network_response.dart';
 import 'package:zenslam/app/explore/model/explore_item.dart';
 import 'package:flutter/material.dart';
@@ -22,16 +23,19 @@ class ExploreController extends GetxController {
 
   final categories = [
     'All',
-    'Meditation',
-    'Confidence',
-    'Purpose',
-    'Focus',
-    'Discipline',
-    'Friendship',
-    'Dating',
-    'Others',
-    'Manhood',
-    'Relationship',
+    'Forehand',
+    'Backhand',
+    'Serve',
+    'Volley',
+    'Stop/Drop Shot',
+    'Footwork & Movement',
+    'Eyes on the Ball',
+    'Confidence & Self-Belief',
+    'Concentration & Focus',
+    'Flow State & Rhythm',
+    'Trusting Your Inner Game',
+    'Critical Moments',
+    'Winning',
   ];
 
   // Store content by category
@@ -222,17 +226,19 @@ class ExploreController extends GetxController {
   void _performLocalSearch(String query) {
     final lowerQuery = query.toLowerCase();
 
-    // Search across all cached content
+    // Search across all cached content + static fallback
     final results = <ExploreItem>[];
-    for (var content in categoryContent.values) {
-      results.addAll(
-        content.where((item) =>
-            item.title.toLowerCase().contains(lowerQuery) ||
-            item.description.toLowerCase().contains(lowerQuery) ||
-            item.category.toLowerCase().contains(lowerQuery) ||
-            item.author.toLowerCase().contains(lowerQuery)),
-      );
+    final allContent = categoryContent.values.expand((v) => v).toList();
+    if (allContent.isEmpty) {
+      allContent.addAll(MockContentProvider.getExploreItems());
     }
+    results.addAll(
+      allContent.where((item) =>
+          item.title.toLowerCase().contains(lowerQuery) ||
+          item.description.toLowerCase().contains(lowerQuery) ||
+          item.category.toLowerCase().contains(lowerQuery) ||
+          item.author.toLowerCase().contains(lowerQuery)),
+    );
 
     // Remove duplicates
     final uniqueIds = <String>{};
@@ -316,7 +322,9 @@ class ExploreController extends GetxController {
         }
       }
     } catch (e) {
-      debugPrint('Error loading featured content: $e');
+      debugPrint('Error loading featured content: $e — using static fallback');
+      final staticItems = MockContentProvider.getExploreItems();
+      featuredContent.assignAll(staticItems.take(10).toList());
     }
   }
 
@@ -359,7 +367,9 @@ class ExploreController extends GetxController {
         }
       }
     } catch (e) {
-      debugPrint('Error loading section content for $category: $e');
+      debugPrint('Error loading section content for $category: $e — using static fallback');
+      final staticItems = MockContentProvider.getExploreItems(category: category);
+      sectionContent[category]!.assignAll(staticItems.take(10).toList());
     }
   }
 
@@ -482,30 +492,17 @@ class ExploreController extends GetxController {
         }
       }
     } catch (e) {
-      errorMessage.value = 'Failed to load content: ${e.toString()}';
-      debugPrint('Error loading content: $e');
+      errorMessage.value = '';
+      debugPrint('Error loading content: $e — using static fallback');
 
       if (!loadMore) {
-        // For 'All' category, fall back to cached data from other categories
-        if (category == 'All') {
-          final cachedItems = _getCombinedCachedContent();
-          if (cachedItems.isNotEmpty) {
-            categoryContent[category] = cachedItems;
-            filteredContent.assignAll(cachedItems);
-            errorMessage.value = ''; // Clear error since we have fallback data
-            debugPrint('Falling back to ${cachedItems.length} cached items');
-          } else {
-            categoryContent[category] = [];
-            if (category == categories[selectedCategory.value]) {
-              filteredContent.clear();
-            }
-          }
-        } else {
-          categoryContent[category] = [];
-          if (category == categories[selectedCategory.value]) {
-            filteredContent.clear();
-          }
+        // Fall back to static tennis content
+        final staticItems = MockContentProvider.getExploreItems(category: category);
+        categoryContent[category] = staticItems;
+        if (category == categories[selectedCategory.value]) {
+          filteredContent.assignAll(staticItems);
         }
+        categoryHasMore[category] = false;
       }
     } finally {
       if (loadMore) {

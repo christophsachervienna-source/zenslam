@@ -68,25 +68,8 @@ class _CinematicSplashScreenState extends State<CinematicSplashScreen>
   }
 
   Future<void> _checkLoginStatus() async {
-    // Check login status in parallel for faster startup
-    final results = await Future.wait([
-      SharedPrefHelper.getAccessToken(),
-      SharedPrefHelper.getIsOnboardingCompleted(),
-    ]);
-    final token = results[0] as String?;
-    final isOnboardingCompleted = results[1] as bool?;
-
-    if (token != null || isOnboardingCompleted == true) {
-      // User is logged in or completed onboarding
-      // Initialize notifications in background (don't block navigation)
-      NotificationService.initialize();
-      _navigationTarget = NavBarScreen();
-    } else {
-      // New user, go to masterpiece onboarding
-      _navigationTarget = const AwakeningScreen();
-    }
-
-    // Navigate immediately when ready
+    // TODO: Remove debug bypass — always go to main app for testing
+    _navigationTarget = NavBarScreen();
     _navigateToTarget();
   }
 

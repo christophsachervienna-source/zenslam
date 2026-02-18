@@ -1,4 +1,5 @@
 import 'package:zenslam/core/const/shared_pref_helper.dart';
+import 'package:zenslam/core/data/mock_content_provider.dart';
 import 'package:zenslam/core/global_widegts/network_response.dart';
 import 'package:zenslam/app/mentor_flow/controller/recommendation_model.dart';
 import 'package:flutter/material.dart';
@@ -69,18 +70,18 @@ class RecommendationController extends GetxController {
           'Successfully loaded ${recommendations.length} recommendations, Has more: ${hasMore.value}',
         );
       } else {
-        errorMessage.value =
-            response.data['message'] ?? 'Failed to load recommendations';
-        debugPrint('API Error: ${errorMessage.value}');
+        debugPrint('API Error: ${response.data['message']}');
         if (!loadMore) {
-          recommendations.clear();
+          recommendations.value = MockContentProvider.getRecommendations();
+          hasMore.value = false;
         }
       }
     } catch (e) {
-      errorMessage.value = 'Error fetching recommendations: $e';
-      debugPrint('Error in fetchRecommendations: $e');
+      errorMessage.value = '';
+      debugPrint('Error in fetchRecommendations: $e — using static fallback');
       if (!loadMore) {
-        recommendations.clear();
+        recommendations.value = MockContentProvider.getRecommendations();
+        hasMore.value = false;
       }
     } finally {
       if (loadMore) {

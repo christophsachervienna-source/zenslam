@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:zenslam/core/const/shared_pref_helper.dart';
+import 'package:zenslam/core/data/mock_content_provider.dart';
 import 'package:zenslam/core/global_widegts/network_response.dart';
 import 'package:zenslam/core/const/routes.dart';
 import 'package:zenslam/app/home_flow/model/featured_model.dart';
@@ -68,19 +69,18 @@ class FeaturedController extends GetxController {
           '✅ Featured items loaded: ${featuredItems.length}, Has more: ${hasMore.value}',
         );
       } else {
-        debugPrint('❌ API returned success: false');
-        final message = response.data['message'] ?? 'Failed to load content';
-        errorMessage.value = message;
+        debugPrint('API Error: ${response.data['message']}');
         if (!loadMore) {
-          //  Get.snackbar('Error', message);
+          featuredItems.value = MockContentProvider.getFeatured();
+          hasMore.value = false;
         }
       }
-    } catch (e, stackTrace) {
-      debugPrint('💥 Exception: $e');
-      debugPrint('📝 Stack trace: $stackTrace');
-      errorMessage.value = e.toString();
+    } catch (e) {
+      debugPrint('Error fetching featured: $e — using static fallback');
+      errorMessage.value = '';
       if (!loadMore) {
-        //  Get.snackbar('Error', 'Failed to load content: $e');
+        featuredItems.value = MockContentProvider.getFeatured();
+        hasMore.value = false;
       }
     } finally {
       if (loadMore) {

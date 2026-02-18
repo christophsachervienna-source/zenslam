@@ -1,4 +1,5 @@
 import 'package:zenslam/core/const/shared_pref_helper.dart';
+import 'package:zenslam/core/data/mock_content_provider.dart';
 import 'package:zenslam/core/global_widegts/network_response.dart';
 import 'package:zenslam/app/home_flow/model/series_model.dart';
 import 'package:zenslam/app/home_flow/model/series_player_screen.dart';
@@ -79,18 +80,18 @@ class SeriesController extends GetxController {
           '✅ Fetched ${categoriesList.length} categories, Has more: ${hasMore.value}',
         );
       } else {
-        errorMessage.value =
-            response.data['message'] ?? 'Failed to fetch categories';
-        debugPrint('❌ Error: ${errorMessage.value}');
+        debugPrint('API Error: ${response.data['message']}');
         if (!loadMore) {
-          // Get.snackbar('Error', 'Failed to load categories');
+          categoriesList.value = MockContentProvider.getSeriesCategories();
+          hasMore.value = false;
         }
       }
     } catch (e) {
-      errorMessage.value = 'Failed to fetch categories: $e';
-      debugPrint('❌ Error fetching categories: $e');
+      errorMessage.value = '';
+      debugPrint('Error fetching categories: $e — using static fallback');
       if (!loadMore) {
-        //Get.snackbar('Error', 'Failed to load categories');
+        categoriesList.value = MockContentProvider.getSeriesCategories();
+        hasMore.value = false;
       }
     } finally {
       if (loadMore) {

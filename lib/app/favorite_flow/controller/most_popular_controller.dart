@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:zenslam/core/const/shared_pref_helper.dart';
+import 'package:zenslam/core/data/mock_content_provider.dart';
 import 'package:zenslam/core/global_widegts/network_response.dart';
 import 'package:zenslam/app/mentor_flow/controller/most_popular_model.dart';
 import 'package:flutter/material.dart';
@@ -74,24 +75,18 @@ class MostPopularController extends GetxController {
           '🎯 Most Popular Items Loaded: ${popularItems.length}, Has more: ${hasMore.value}',
         );
       } else {
-        final errorMsg =
-            response.data['message'] ?? 'Failed to load popular items';
-        errorMessage.value = errorMsg;
+        debugPrint('API Error: ${response.data['message']}');
         if (!loadMore) {
-          // Get.snackbar(
-          //   'Failed to load popular items',
-          //   'Make sure you are connected to the internet',
-          // );
+          popularItems.value = MockContentProvider.getMostPopular();
+          hasMore.value = false;
         }
       }
     } catch (e) {
-      debugPrint('💥 Error fetching popular items: $e');
-      errorMessage.value = 'Failed to load popular items: $e';
+      debugPrint('Error fetching popular items: $e — using static fallback');
+      errorMessage.value = '';
       if (!loadMore) {
-        // Get.snackbar(
-        //   'Failed to load popular items',
-        //   'Make sure you are connected to the internet',
-        // );
+        popularItems.value = MockContentProvider.getMostPopular();
+        hasMore.value = false;
       }
     } finally {
       if (loadMore) {
