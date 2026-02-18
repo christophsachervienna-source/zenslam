@@ -394,7 +394,11 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
       icon = Icons.bedtime_outlined;
     }
 
-    return Obx(() => Column(
+    return Obx(() {
+      final hasName = profileController.fullName.value.isNotEmpty;
+      final displayName = hasName ? profileController.fullName.value : 'Zenslam';
+
+      return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
@@ -428,9 +432,7 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
             ),
             const SizedBox(height: 10),
             Text(
-              profileController.fullName.value.isNotEmpty
-                  ? profileController.fullName.value
-                  : 'Player',
+              displayName,
               style: GoogleFonts.bebasNeue(
                 fontSize: 36,
                 fontWeight: FontWeight.w400,
@@ -439,7 +441,8 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
               ),
             ),
           ],
-        ));
+        );
+    });
   }
 
   Widget _buildUserAvatar() {
@@ -2244,16 +2247,20 @@ class _PremiumCategoryChip extends StatelessWidget {
                 color: QuestionnaireTheme.accentGold,
               ),
             ),
-            const SizedBox(height: 8),
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.outfit(
-                fontSize: 11,
-                fontWeight: FontWeight.w500,
-                color: QuestionnaireTheme.textSecondary,
+            const SizedBox(height: 6),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: GoogleFonts.outfit(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w500,
+                  color: QuestionnaireTheme.textSecondary,
+                  height: 1.2,
+                ),
               ),
             ),
           ],

@@ -1,9 +1,9 @@
 import 'dart:ui';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:zenslam/app/explore/model/explore_item.dart';
 import 'package:zenslam/app/onboarding_flow/theme/questionnaire_theme.dart';
 import 'package:zenslam/core/const/app_colors.dart';
+import 'package:zenslam/core/widgets/thumbnail_image.dart';
 import 'package:zenslam/core/utils/content_lock_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -175,7 +175,7 @@ class _PremiumContentCardState extends State<PremiumContentCard>
   }
 
   Widget _buildBackgroundImage() {
-    return CachedNetworkImage(
+    return ThumbnailImage(
       imageUrl: widget.item.thumbnail,
       fit: BoxFit.cover,
       placeholder: (context, url) => Container(

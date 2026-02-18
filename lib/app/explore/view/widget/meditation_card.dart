@@ -1,8 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:zenslam/core/const/app_colors.dart';
 import 'package:zenslam/core/route/icons_path.dart';
 import 'package:zenslam/core/route/image_path.dart';
 import 'package:zenslam/core/route/global_text_style.dart';
+import 'package:zenslam/core/widgets/thumbnail_image.dart';
 import 'package:zenslam/app/favorite_flow/controller/favorite_controller.dart';
 import 'package:zenslam/app/favorite_flow/model/favorite_model.dart';
 import 'package:zenslam/app/home_flow/widgets/duration_display.dart';
@@ -71,21 +70,9 @@ class MeditationCard extends StatelessWidget {
               Positioned.fill(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
-                  child: CachedNetworkImage(
+                  child: ThumbnailImage(
                     imageUrl: imageUrl,
                     fit: BoxFit.cover,
-                    placeholder: (context, url) => const Center(
-                      child: SizedBox(
-                        height: 20,
-                        width: 20,
-                        child: CircularProgressIndicator(
-                          strokeWidth: 2,
-                          color: AppColors.primaryColor,
-                        ),
-                      ),
-                    ),
-                    errorWidget: (context, url, error) =>
-                        const Icon(Icons.error),
                   ),
                 ),
               ),

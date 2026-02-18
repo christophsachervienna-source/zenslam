@@ -144,20 +144,35 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.login_rounded,
-                      size: 64,
-                      color: QuestionnaireTheme.textTertiary,
+                    Container(
+                      width: 80,
+                      height: 80,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.primaryColor.withValues(alpha: 0.08),
+                        border: Border.all(
+                          color: AppColors.primaryColor.withValues(alpha: 0.2),
+                        ),
+                      ),
+                      child: Icon(
+                        Icons.favorite_border_rounded,
+                        size: 36,
+                        color: AppColors.primaryColor.withValues(alpha: 0.6),
+                      ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 24),
                     Text(
-                      'Login Required',
-                      style: QuestionnaireTheme.titleMedium(),
+                      'Save Your Favorites',
+                      style: QuestionnaireTheme.titleLarge(),
                     ),
                     const SizedBox(height: 8),
-                    Text(
-                      'Please login to see your favorites',
-                      style: QuestionnaireTheme.bodySmall(),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: Text(
+                        'Sign in to save meditations and build your personal collection',
+                        style: QuestionnaireTheme.bodyMedium(),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ],
                 ),

@@ -47,6 +47,21 @@ class ImagePath {
   static const String landingScreenBG = "assets/images/landing_screen_bg.png";
   static const String shadow = "assets/images/shadow.png";
 
+  // Meditation court thumbnails
+  static const String meditationCourt1 = "assets/images/meditation_court_1.png";
+  static const String meditationCourt2 = "assets/images/meditation_court_2.png";
+  static const String meditationCourt3 = "assets/images/meditation_court_3.png";
+  static const String meditationCourt4 = "assets/images/meditation_court_4.png";
+  static const String meditationCourt5 = "assets/images/meditation_court_5.png";
+
+  static const List<String> meditationThumbnails = [
+    meditationCourt1,
+    meditationCourt2,
+    meditationCourt3,
+    meditationCourt4,
+    meditationCourt5,
+  ];
+
   // Premium onboarding assets
   static const String goldenLeafLeft = "assets/icons/golden_leaf_left.png";
   static const String goldenLeafRight = "assets/icons/golden_leaf_right.png";

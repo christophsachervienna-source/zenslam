@@ -1,5 +1,6 @@
 import 'package:zenslam/core/const/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import '../../../core/route/icons_path.dart';
 
 class CustomBottomNav extends StatelessWidget {
@@ -12,90 +13,156 @@ class CustomBottomNav extends StatelessWidget {
     required this.onTap,
   });
 
+  Widget _buildIcon({
+    required IconData materialIcon,
+    required IconData materialActiveIcon,
+    required String assetPath,
+    required String activeAssetPath,
+    required bool isActive,
+    required String label,
+  }) {
+    // Use Material Icons on web for reliability, asset icons on native
+    if (kIsWeb) {
+      return Icon(
+        isActive ? materialActiveIcon : materialIcon,
+        size: 24,
+      );
+    }
+    return Semantics(
+      label: '$label tab${isActive ? ', selected' : ''}',
+      child: ImageIcon(AssetImage(isActive ? activeAssetPath : assetPath), size: 24),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        height: 90,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(16),
-            topRight: Radius.circular(16),
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFF111318),
+        border: Border(
+          top: BorderSide(
+            color: Colors.white.withValues(alpha: 0.06),
+            width: 0.5,
           ),
         ),
-        child: BottomNavigationBar(
-          currentIndex: currentIndex,
-          onTap: onTap,
-          type: BottomNavigationBarType.fixed,
-          unselectedItemColor: const Color(0xFF9A9A9E),
-          selectedItemColor: AppColors.primaryColor,
-          backgroundColor: const Color(0xFF1A1A1F),
-          selectedFontSize: 12,
-          unselectedFontSize: 12,
-          iconSize: 26,
-          items: [
-            BottomNavigationBarItem(
-              icon: Semantics(
-                label: 'Home tab',
-                child: ImageIcon(AssetImage(IconsPath.home), size: 25),
+      ),
+      child: SafeArea(
+        child: SizedBox(
+          height: 64,
+          child: BottomNavigationBar(
+            currentIndex: currentIndex,
+            onTap: onTap,
+            type: BottomNavigationBarType.fixed,
+            unselectedItemColor: const Color(0xFF6B7280),
+            selectedItemColor: AppColors.primaryColor,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            selectedFontSize: 11,
+            unselectedFontSize: 11,
+            iconSize: 24,
+            items: [
+              BottomNavigationBarItem(
+                icon: _buildIcon(
+                  materialIcon: Icons.home_outlined,
+                  materialActiveIcon: Icons.home_rounded,
+                  assetPath: IconsPath.home,
+                  activeAssetPath: IconsPath.homeFill,
+                  isActive: currentIndex == 0,
+                  label: 'Home',
+                ),
+                activeIcon: _buildIcon(
+                  materialIcon: Icons.home_outlined,
+                  materialActiveIcon: Icons.home_rounded,
+                  assetPath: IconsPath.home,
+                  activeAssetPath: IconsPath.homeFill,
+                  isActive: true,
+                  label: 'Home',
+                ),
+                label: 'Home',
+                tooltip: 'Navigate to Home',
               ),
-              activeIcon: Semantics(
-                label: 'Home tab, selected',
-                child: ImageIcon(AssetImage(IconsPath.homeFill), size: 25),
+              BottomNavigationBarItem(
+                icon: _buildIcon(
+                  materialIcon: Icons.explore_outlined,
+                  materialActiveIcon: Icons.explore_rounded,
+                  assetPath: IconsPath.exploreicon,
+                  activeAssetPath: IconsPath.explorefill,
+                  isActive: currentIndex == 1,
+                  label: 'Explore',
+                ),
+                activeIcon: _buildIcon(
+                  materialIcon: Icons.explore_outlined,
+                  materialActiveIcon: Icons.explore_rounded,
+                  assetPath: IconsPath.exploreicon,
+                  activeAssetPath: IconsPath.explorefill,
+                  isActive: true,
+                  label: 'Explore',
+                ),
+                label: 'Explore',
+                tooltip: 'Browse meditation categories',
               ),
-              label: 'Home',
-              tooltip: 'Navigate to Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Semantics(
-                label: 'Explore tab',
-                child: ImageIcon(AssetImage(IconsPath.exploreicon), size: 25),
+              BottomNavigationBarItem(
+                icon: _buildIcon(
+                  materialIcon: Icons.chat_bubble_outline_rounded,
+                  materialActiveIcon: Icons.chat_bubble_rounded,
+                  assetPath: IconsPath.mentoricon,
+                  activeAssetPath: IconsPath.mentorfill,
+                  isActive: currentIndex == 2,
+                  label: 'Coach',
+                ),
+                activeIcon: _buildIcon(
+                  materialIcon: Icons.chat_bubble_outline_rounded,
+                  materialActiveIcon: Icons.chat_bubble_rounded,
+                  assetPath: IconsPath.mentoricon,
+                  activeAssetPath: IconsPath.mentorfill,
+                  isActive: true,
+                  label: 'Coach',
+                ),
+                label: 'Coach',
+                tooltip: 'Access coach content',
               ),
-              activeIcon: Semantics(
-                label: 'Explore tab, selected',
-                child: ImageIcon(AssetImage(IconsPath.explorefill), size: 25),
+              BottomNavigationBarItem(
+                icon: _buildIcon(
+                  materialIcon: Icons.favorite_border_rounded,
+                  materialActiveIcon: Icons.favorite_rounded,
+                  assetPath: IconsPath.favorite,
+                  activeAssetPath: IconsPath.fill,
+                  isActive: currentIndex == 3,
+                  label: 'Favorite',
+                ),
+                activeIcon: _buildIcon(
+                  materialIcon: Icons.favorite_border_rounded,
+                  materialActiveIcon: Icons.favorite_rounded,
+                  assetPath: IconsPath.favorite,
+                  activeAssetPath: IconsPath.fill,
+                  isActive: true,
+                  label: 'Favorite',
+                ),
+                label: 'Favorites',
+                tooltip: 'View your favorites',
               ),
-              label: 'Explore',
-              tooltip: 'Browse meditation categories',
-            ),
-            BottomNavigationBarItem(
-              icon: Semantics(
-                label: 'Coach tab',
-                child: ImageIcon(AssetImage(IconsPath.mentoricon), size: 25),
+              BottomNavigationBarItem(
+                icon: _buildIcon(
+                  materialIcon: Icons.person_outline_rounded,
+                  materialActiveIcon: Icons.person_rounded,
+                  assetPath: IconsPath.profile,
+                  activeAssetPath: IconsPath.profileFill,
+                  isActive: currentIndex == 4,
+                  label: 'Profile',
+                ),
+                activeIcon: _buildIcon(
+                  materialIcon: Icons.person_outline_rounded,
+                  materialActiveIcon: Icons.person_rounded,
+                  assetPath: IconsPath.profile,
+                  activeAssetPath: IconsPath.profileFill,
+                  isActive: true,
+                  label: 'Profile',
+                ),
+                label: 'Profile',
+                tooltip: 'Manage your profile',
               ),
-              activeIcon: Semantics(
-                label: 'Coach tab, selected',
-                child: ImageIcon(AssetImage(IconsPath.mentorfill), size: 25),
-              ),
-              label: 'Coach',
-              tooltip: 'Access coach content',
-            ),
-            BottomNavigationBarItem(
-              icon: Semantics(
-                label: 'Favorite tab',
-                child: ImageIcon(AssetImage(IconsPath.favorite), size: 25),
-              ),
-              activeIcon: Semantics(
-                label: 'Favorite tab, selected',
-                child: ImageIcon(AssetImage(IconsPath.fill), size: 25),
-              ),
-              label: 'Favorite',
-              tooltip: 'View your favorites',
-            ),
-            BottomNavigationBarItem(
-              icon: Semantics(
-                label: 'Profile tab',
-                child: ImageIcon(AssetImage(IconsPath.profile), size: 25),
-              ),
-              activeIcon: Semantics(
-                label: 'Profile tab, selected',
-                child: ImageIcon(AssetImage(IconsPath.profileFill), size: 25),
-              ),
-              label: 'Profile',
-              tooltip: 'Manage your profile',
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

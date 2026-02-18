@@ -1,8 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:zenslam/core/const/app_colors.dart';
 import 'package:zenslam/core/route/icons_path.dart';
 import 'package:zenslam/core/route/image_path.dart';
 import 'package:zenslam/core/route/global_text_style.dart';
+import 'package:zenslam/core/widgets/thumbnail_image.dart';
 import 'package:zenslam/core/utils/content_lock_helper.dart';
 import 'package:zenslam/app/explore/controller/audio_service.dart';
 import 'package:zenslam/app/favorite_flow/controller/favorite_controller.dart';
@@ -54,34 +53,11 @@ class MostPopularCard extends StatelessWidget {
           Positioned.fill(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: CachedNetworkImage(
+              child: ThumbnailImage(
                 imageUrl: card.imageUrl,
-                cacheKey: card.imageUrl,
                 fit: BoxFit.cover,
-                fadeInDuration: const Duration(milliseconds: 0),
-                fadeOutDuration: const Duration(milliseconds: 0),
                 memCacheWidth: 500,
                 memCacheHeight: 500,
-                placeholder: (context, url) => const Center(
-                  child: SizedBox(
-                    height: 20,
-                    width: 20,
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      color: AppColors.primaryColor,
-                    ),
-                  ),
-                ),
-                errorWidget: (context, url, error) {
-                  // You can add retry logic here
-                  return Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade800,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Icon(Icons.error, color: Colors.grey.shade200),
-                  );
-                },
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:zenslam/core/data/tennis_content_library.dart';
+import 'package:zenslam/core/route/image_path.dart';
 import 'package:zenslam/app/explore/model/explore_item.dart';
 import 'package:zenslam/app/home_flow/model/todays_dailies_model.dart';
 import 'package:zenslam/app/mentor_flow/controller/recommendation_model.dart';
@@ -11,6 +12,12 @@ import 'package:zenslam/app/home_flow/model/series_model.dart';
 /// Used as fallback when API calls fail (empty baseUrl during development).
 class MockContentProvider {
   static final _now = DateTime.now();
+
+  /// Pick a meditation thumbnail based on session id (cycles through 5 images)
+  static String _thumbnailForSession(String sessionId) {
+    final index = sessionId.hashCode.abs() % ImagePath.meditationThumbnails.length;
+    return ImagePath.meditationThumbnails[index];
+  }
 
   /// Get the category name for a given categoryId
   static String _categoryName(String categoryId) {
@@ -33,7 +40,7 @@ class MockContentProvider {
       description: session.description,
       content: '',
       author: 'Zenslam',
-      thumbnail: '',
+      thumbnail: _thumbnailForSession(session.id),
       duration: '${session.durationMinutes}:00',
       views: 0,
       spendTime: 0,
@@ -58,7 +65,7 @@ class MockContentProvider {
       description: session.description,
       content: '',
       author: 'Zenslam',
-      thumbnail: '',
+      thumbnail: _thumbnailForSession(session.id),
       duration: '${session.durationMinutes}:00',
       views: 0,
       spendTime: 0,
@@ -82,7 +89,7 @@ class MockContentProvider {
       title: session.title,
       description: session.description,
       content: '',
-      thumbnail: '',
+      thumbnail: _thumbnailForSession(session.id),
       author: 'Zenslam',
       duration: '${session.durationMinutes}:00',
       views: 0,
@@ -108,7 +115,7 @@ class MockContentProvider {
       description: session.description,
       content: '',
       author: 'Zenslam',
-      thumbnail: '',
+      thumbnail: _thumbnailForSession(session.id),
       duration: '${session.durationMinutes}:00',
       views: 0,
       spendTime: 0,
@@ -133,7 +140,7 @@ class MockContentProvider {
       description: session.description,
       content: '',
       author: 'Zenslam',
-      thumbnail: '',
+      thumbnail: _thumbnailForSession(session.id),
       duration: '${session.durationMinutes}:00',
       views: 0,
       spendTime: 0,
@@ -230,7 +237,7 @@ class MockContentProvider {
         name: cat.name,
         title: cat.name,
         description: cat.description,
-        thumbnail: '',
+        thumbnail: _thumbnailForSession(cat.id),
         categoryFavorites: [],
       );
     }).toList();
