@@ -53,16 +53,14 @@ class ExploreAllController extends GetxController {
 
   void _initializeCategories() {
     categories.value = [
-      'Meditation',
+      'Forehand',
+      'Backhand',
+      'Serve',
       'Confidence',
-      'Purpose',
       'Focus',
-      'Discipline',
-      'Friendship',
-      'Dating',
-      'Others',
-      'Manhood',
-      'Relationship',
+      'Flow State',
+      'Critical Moments',
+      'Winning',
     ];
 
     // Initialize pagination for all categories

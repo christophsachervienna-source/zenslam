@@ -27,12 +27,19 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'core/const/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Prefetch fonts to avoid flash of unstyled text
+  GoogleFonts.pendingFonts([
+    GoogleFonts.bebasNeue(),
+    GoogleFonts.outfit(),
+  ]);
 
   // Lock app to portrait mode only
   await SystemChrome.setPreferredOrientations([

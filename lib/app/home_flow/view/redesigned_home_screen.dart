@@ -23,6 +23,7 @@ import 'package:zenslam/app/home_flow/widgets/duration_display.dart';
 import 'package:zenslam/app/home_flow/widgets/feedback_bottom_sheet.dart';
 import 'package:zenslam/app/meditation_timer/view/meditation_timer_screen.dart';
 import 'package:zenslam/app/onboarding_flow/theme/questionnaire_theme.dart';
+import 'package:zenslam/core/const/app_colors.dart';
 import 'package:zenslam/app/onboarding_flow/view/subscription_screen_v2.dart';
 import 'package:zenslam/app/profile_flow/controller/profile_controller.dart';
 import 'package:zenslam/core/widgets/no_internet_widget.dart';
@@ -309,32 +310,33 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _buildHeroCarousel(),
-        const SizedBox(height: 28),
+        const SizedBox(height: 36),
         _buildRecommendations(),
-        const SizedBox(height: 28),
+        const SizedBox(height: 36),
         _buildTodaysDailies(),
-        const SizedBox(height: 28),
+        const SizedBox(height: 36),
         _buildNewReleases(),
-        const SizedBox(height: 28),
+        const SizedBox(height: 36),
         _buildSeries(),
-        const SizedBox(height: 28),
+        const SizedBox(height: 36),
         _buildMostPopular(),
-        const SizedBox(height: 28),
+        const SizedBox(height: 36),
         _buildExploreCategories(),
-        const SizedBox(height: 28),
+        const SizedBox(height: 36),
         _buildMasterclasses(),
-        const SizedBox(height: 28),
+        const SizedBox(height: 36),
         // Individual category sections
-        _buildCategorySection('Meditation', Icons.self_improvement),
-        _buildCategorySection('Discipline', Icons.fitness_center),
+        _buildCategorySection('Forehand', Icons.sports_tennis),
+        _buildCategorySection('Backhand', Icons.swap_horiz),
+        _buildCategorySection('Serve', Icons.arrow_upward),
         _buildCategorySection('Confidence', Icons.psychology),
-        _buildCategorySection('Purpose', Icons.flag),
         _buildCategorySection('Focus', Icons.center_focus_strong),
-        _buildCategorySection('Manhood', Icons.person),
-        _buildCategorySection('Dating', Icons.favorite),
-        const SizedBox(height: 28),
+        _buildCategorySection('Flow State', Icons.waves),
+        _buildCategorySection('Critical Moments', Icons.bolt),
+        _buildCategorySection('Winning', Icons.emoji_events),
+        const SizedBox(height: 36),
         _buildFeedbackSection(),
-        const SizedBox(height: 28),
+        const SizedBox(height: 36),
         _buildCommunitySection(),
       ],
     );
@@ -415,7 +417,7 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
                   const SizedBox(width: 6),
                   Text(
                     greeting,
-                    style: GoogleFonts.dmSans(
+                    style: GoogleFonts.outfit(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       color: QuestionnaireTheme.accentGold,
@@ -428,12 +430,12 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
             Text(
               profileController.fullName.value.isNotEmpty
                   ? profileController.fullName.value
-                  : 'Warrior',
-              style: GoogleFonts.playfairDisplay(
-                fontSize: 32,
-                fontWeight: FontWeight.w700,
+                  : 'Player',
+              style: GoogleFonts.bebasNeue(
+                fontSize: 36,
+                fontWeight: FontWeight.w400,
                 color: QuestionnaireTheme.textPrimary,
-                letterSpacing: -0.5,
+                letterSpacing: 1.5,
               ),
             ),
           ],
@@ -478,10 +480,10 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
 
   Widget _buildMotivationalQuote() {
     final quotes = [
-      "Every warrior was once a beginner.",
-      "Discipline is choosing what you want most.",
-      "The mind is everything.",
-      "Strength grows in tough moments.",
+      "Champions adjust. You will too.",
+      "The point starts before the serve.",
+      "Play the ball, not the scoreboard.",
+      "Trust your swing.",
     ];
     final quote = quotes[DateTime.now().day % quotes.length];
 
@@ -504,7 +506,7 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
           Flexible(
             child: Text(
               quote,
-              style: GoogleFonts.dmSans(
+              style: GoogleFonts.outfit(
                 fontSize: 13,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.w400,
@@ -661,14 +663,14 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      showUpgrade ? 'Unlock Full Access' : 'Premium Member',
-                      style: GoogleFonts.playfairDisplay(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
+                      showUpgrade ? 'UNLOCK FULL ACCESS' : 'PREMIUM MEMBER',
+                      style: GoogleFonts.bebasNeue(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w400,
                         color: showUpgrade
                             ? QuestionnaireTheme.textPrimary
                             : Colors.white,
-                        letterSpacing: -0.3,
+                        letterSpacing: 1.0,
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -676,7 +678,7 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
                       showUpgrade
                           ? 'Transform your mind with Zenslam Pro'
                           : 'All content unlocked',
-                      style: GoogleFonts.dmSans(
+                      style: GoogleFonts.outfit(
                         fontSize: 13,
                         fontWeight: FontWeight.w400,
                         color: showUpgrade
@@ -719,21 +721,21 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
         Row(
           children: [
             Container(
-              width: 4,
-              height: 24,
+              width: 10,
+              height: 10,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(2),
-                gradient: QuestionnaireTheme.accentGradient,
+                shape: BoxShape.circle,
+                color: AppColors.accentYellow,
               ),
             ),
             const SizedBox(width: 12),
             Text(
-              title,
-              style: GoogleFonts.playfairDisplay(
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
+              title.toUpperCase(),
+              style: GoogleFonts.bebasNeue(
+                fontSize: 28,
+                fontWeight: FontWeight.w400,
                 color: QuestionnaireTheme.textPrimary,
-                letterSpacing: -0.3,
+                letterSpacing: 1.5,
               ),
             ),
           ],
@@ -758,7 +760,7 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
                 children: [
                   Text(
                     'See All',
-                    style: GoogleFonts.dmSans(
+                    style: GoogleFonts.outfit(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
                       color: QuestionnaireTheme.accentGold,
@@ -962,14 +964,14 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
 
   Widget _buildExploreCategories() {
     final categories = [
-      _CategoryItem('Meditation', Icons.self_improvement),
-      _CategoryItem('Discipline', Icons.fitness_center),
+      _CategoryItem('Forehand', Icons.sports_tennis),
+      _CategoryItem('Backhand', Icons.swap_horiz),
+      _CategoryItem('Serve', Icons.arrow_upward),
       _CategoryItem('Confidence', Icons.psychology),
-      _CategoryItem('Purpose', Icons.flag),
       _CategoryItem('Focus', Icons.center_focus_strong),
-      _CategoryItem('Manhood', Icons.person),
-      _CategoryItem('Relationship', Icons.people),
-      _CategoryItem('Dating', Icons.favorite),
+      _CategoryItem('Flow State', Icons.waves),
+      _CategoryItem('Critical Moments', Icons.bolt),
+      _CategoryItem('Winning', Icons.emoji_events),
     ];
 
     return Column(
@@ -1039,17 +1041,18 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
             ),
             const SizedBox(height: 16),
             Text(
-              'Help Us Improve',
-              style: GoogleFonts.playfairDisplay(
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
+              'HELP US IMPROVE',
+              style: GoogleFonts.bebasNeue(
+                fontSize: 26,
+                fontWeight: FontWeight.w400,
                 color: QuestionnaireTheme.textPrimary,
+                letterSpacing: 1.5,
               ),
             ),
             const SizedBox(height: 8),
             Text(
               'We want to make your experience even better. Share suggestions, feedback, or request meditation topics.',
-              style: GoogleFonts.dmSans(
+              style: GoogleFonts.outfit(
                 fontSize: 14,
                 color: QuestionnaireTheme.textSecondary,
                 height: 1.4,
@@ -1078,7 +1081,7 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
                 ),
                 child: Text(
                   'Share Your Thoughts',
-                  style: GoogleFonts.dmSans(
+                  style: GoogleFonts.outfit(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                     color: QuestionnaireTheme.backgroundPrimary,
@@ -1165,7 +1168,7 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
                         const SizedBox(width: 6),
                         Text(
                           'COMING SOON',
-                          style: GoogleFonts.dmSans(
+                          style: GoogleFonts.outfit(
                             fontSize: 11,
                             fontWeight: FontWeight.w700,
                             color: QuestionnaireTheme.backgroundPrimary,
@@ -1179,12 +1182,12 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
 
                   // Title
                   Text(
-                    'Zenslam Community',
-                    style: GoogleFonts.playfairDisplay(
-                      fontSize: 26,
-                      fontWeight: FontWeight.w700,
+                    'ZENSLAM COMMUNITY',
+                    style: GoogleFonts.bebasNeue(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w400,
                       color: Colors.white,
-                      letterSpacing: -0.5,
+                      letterSpacing: 1.5,
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -1192,7 +1195,7 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
                   // Description
                   Text(
                     'Join a brotherhood of men committed to growth. Connect, share experiences, and evolve together.',
-                    style: GoogleFonts.dmSans(
+                    style: GoogleFonts.outfit(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color: Colors.white.withValues(alpha: 0.85),
@@ -1232,7 +1235,7 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
                           const SizedBox(width: 8),
                           Text(
                             'Pre-Register Now',
-                            style: GoogleFonts.dmSans(
+                            style: GoogleFonts.outfit(
                               fontSize: 15,
                               fontWeight: FontWeight.w700,
                               color: QuestionnaireTheme.backgroundPrimary,
@@ -1320,7 +1323,7 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 28),
+          const SizedBox(height: 36),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -1341,12 +1344,12 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
                   ),
                   const SizedBox(width: 12),
                   Text(
-                    categoryName,
-                    style: GoogleFonts.playfairDisplay(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
+                    categoryName.toUpperCase(),
+                    style: GoogleFonts.bebasNeue(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w400,
                       color: QuestionnaireTheme.textPrimary,
-                      letterSpacing: -0.3,
+                      letterSpacing: 1.5,
                     ),
                   ),
                 ],
@@ -1372,7 +1375,7 @@ class _RedesignedHomeScreenState extends State<RedesignedHomeScreen>
                   ),
                   child: Text(
                     'See All',
-                    style: GoogleFonts.dmSans(
+                    style: GoogleFonts.outfit(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
                       color: QuestionnaireTheme.accentGold,
@@ -1647,7 +1650,7 @@ class _PremiumContentCard extends StatelessWidget {
                     child: Center(
                       child: Text(
                         '$rank',
-                        style: GoogleFonts.dmSans(
+                        style: GoogleFonts.outfit(
                           fontSize: 12,
                           fontWeight: FontWeight.w700,
                           color: QuestionnaireTheme.backgroundPrimary,
@@ -1705,7 +1708,7 @@ class _PremiumContentCard extends StatelessWidget {
                             title,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.dmSans(
+                            style: GoogleFonts.outfit(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: Colors.white,
@@ -1762,7 +1765,7 @@ class _PremiumContentCard extends StatelessWidget {
                               category,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.dmSans(
+                              style: GoogleFonts.outfit(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w600,
                                 color: QuestionnaireTheme.accentGold,
@@ -1780,7 +1783,7 @@ class _PremiumContentCard extends StatelessWidget {
                         const SizedBox(width: 3),
                         Text(
                           DurationDisplay.parseDuration(duration),
-                          style: GoogleFonts.dmSans(
+                          style: GoogleFonts.outfit(
                             fontSize: 10,
                             fontWeight: FontWeight.w500,
                             color: Colors.white70,
@@ -1986,7 +1989,7 @@ class _PremiumListTile extends StatelessWidget {
                       ),
                       child: Text(
                         'MASTERCLASS',
-                        style: GoogleFonts.dmSans(
+                        style: GoogleFonts.outfit(
                           fontSize: 9,
                           fontWeight: FontWeight.w700,
                           color: QuestionnaireTheme.backgroundPrimary,
@@ -1998,7 +2001,7 @@ class _PremiumListTile extends StatelessWidget {
                     title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.dmSans(
+                    style: GoogleFonts.outfit(
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                       color: QuestionnaireTheme.textPrimary,
@@ -2008,7 +2011,7 @@ class _PremiumListTile extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     subtitle,
-                    style: GoogleFonts.dmSans(
+                    style: GoogleFonts.outfit(
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       color: QuestionnaireTheme.textSecondary,
@@ -2140,7 +2143,7 @@ class _PremiumSeriesCard extends StatelessWidget {
                               ),
                               child: Text(
                                 episodeCount > 0 ? '$episodeCount EPISODES' : 'SERIES',
-                                style: GoogleFonts.dmSans(
+                                style: GoogleFonts.outfit(
                                   fontSize: 9,
                                   fontWeight: FontWeight.w600,
                                   color: QuestionnaireTheme.accentGold,
@@ -2150,13 +2153,14 @@ class _PremiumSeriesCard extends StatelessWidget {
                             ),
                             const SizedBox(height: 6),
                             Text(
-                              title,
+                              title.toUpperCase(),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.playfairDisplay(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
+                              style: GoogleFonts.bebasNeue(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w400,
                                 color: Colors.white,
+                                letterSpacing: 1.0,
                               ),
                             ),
                             const SizedBox(height: 3),
@@ -2164,7 +2168,7 @@ class _PremiumSeriesCard extends StatelessWidget {
                               description,
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.dmSans(
+                              style: GoogleFonts.outfit(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white70,
@@ -2246,7 +2250,7 @@ class _PremiumCategoryChip extends StatelessWidget {
               textAlign: TextAlign.center,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.dmSans(
+              style: GoogleFonts.outfit(
                 fontSize: 11,
                 fontWeight: FontWeight.w500,
                 color: QuestionnaireTheme.textSecondary,
@@ -2377,7 +2381,7 @@ class _HeroCard extends StatelessWidget {
                       const SizedBox(width: 4),
                       Text(
                         'FEATURED',
-                        style: GoogleFonts.dmSans(
+                        style: GoogleFonts.outfit(
                           fontSize: 11,
                           fontWeight: FontWeight.w700,
                           color: QuestionnaireTheme.backgroundPrimary,
@@ -2423,14 +2427,15 @@ class _HeroCard extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            title,
+                            title.toUpperCase(),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.playfairDisplay(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700,
+                            style: GoogleFonts.bebasNeue(
+                              fontSize: 26,
+                              fontWeight: FontWeight.w400,
                               color: Colors.white,
                               height: 1.2,
+                              letterSpacing: 1.0,
                             ),
                           ),
                           const SizedBox(height: 8),
@@ -2447,7 +2452,7 @@ class _HeroCard extends StatelessWidget {
                                 ),
                                 child: Text(
                                   category,
-                                  style: GoogleFonts.dmSans(
+                                  style: GoogleFonts.outfit(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w500,
                                     color: Colors.white,
@@ -2463,7 +2468,7 @@ class _HeroCard extends StatelessWidget {
                               const SizedBox(width: 4),
                               Text(
                                 DurationDisplay.parseDuration(duration),
-                                style: GoogleFonts.dmSans(
+                                style: GoogleFonts.outfit(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.white.withValues(alpha: 0.7),
@@ -2603,18 +2608,19 @@ class _CommunityPreRegistrationSheetState
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  "You're In!",
-                  style: GoogleFonts.playfairDisplay(
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
+                  "YOU'RE IN!",
+                  style: GoogleFonts.bebasNeue(
+                    fontSize: 32,
+                    fontWeight: FontWeight.w400,
                     color: QuestionnaireTheme.textPrimary,
+                    letterSpacing: 1.5,
                   ),
                 ),
                 const SizedBox(height: 12),
                 Text(
                   "We'll notify you when the Zenslam Community launches. Get ready to connect with like-minded men.",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.dmSans(
+                  style: GoogleFonts.outfit(
                     fontSize: 15,
                     color: QuestionnaireTheme.textSecondary,
                     height: 1.5,
@@ -2637,18 +2643,19 @@ class _CommunityPreRegistrationSheetState
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  'Join the Brotherhood',
-                  style: GoogleFonts.playfairDisplay(
-                    fontSize: 26,
-                    fontWeight: FontWeight.w700,
+                  'JOIN THE COMMUNITY',
+                  style: GoogleFonts.bebasNeue(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w400,
                     color: QuestionnaireTheme.textPrimary,
+                    letterSpacing: 1.5,
                   ),
                 ),
                 const SizedBox(height: 12),
                 Text(
                   'Be the first to know when the Zenslam Community launches. Connect with men on the same path of growth.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.dmSans(
+                  style: GoogleFonts.outfit(
                     fontSize: 15,
                     color: QuestionnaireTheme.textSecondary,
                     height: 1.5,
@@ -2682,13 +2689,13 @@ class _CommunityPreRegistrationSheetState
                   child: TextFormField(
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
-                    style: GoogleFonts.dmSans(
+                    style: GoogleFonts.outfit(
                       color: QuestionnaireTheme.textPrimary,
                       fontSize: 16,
                     ),
                     decoration: InputDecoration(
                       hintText: 'Enter your email',
-                      hintStyle: GoogleFonts.dmSans(
+                      hintStyle: GoogleFonts.outfit(
                         color: QuestionnaireTheme.textTertiary,
                         fontSize: 16,
                       ),
@@ -2771,7 +2778,7 @@ class _CommunityPreRegistrationSheetState
                             )
                           : Text(
                               'Get Early Access',
-                              style: GoogleFonts.dmSans(
+                              style: GoogleFonts.outfit(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w700,
                                 color: QuestionnaireTheme.backgroundPrimary,
@@ -2786,7 +2793,7 @@ class _CommunityPreRegistrationSheetState
                 Text(
                   "We'll only use your email to notify you about the community launch.",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.dmSans(
+                  style: GoogleFonts.outfit(
                     fontSize: 12,
                     color: QuestionnaireTheme.textTertiary,
                   ),
@@ -2832,7 +2839,7 @@ class _CommunityPreRegistrationSheetState
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.dmSans(
+                  style: GoogleFonts.outfit(
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
                     color: QuestionnaireTheme.textPrimary,
@@ -2841,7 +2848,7 @@ class _CommunityPreRegistrationSheetState
                 const SizedBox(height: 2),
                 Text(
                   description,
-                  style: GoogleFonts.dmSans(
+                  style: GoogleFonts.outfit(
                     fontSize: 13,
                     color: QuestionnaireTheme.textSecondary,
                   ),

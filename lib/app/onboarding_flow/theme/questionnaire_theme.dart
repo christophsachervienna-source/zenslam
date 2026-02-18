@@ -114,31 +114,31 @@ class QuestionnaireTheme {
   // TYPOGRAPHY - Distinctive and refined
   // ═══════════════════════════════════════════════════════════════════════════
 
-  /// Display font - bold for headlines
+  /// Display font - bold condensed for headlines
   static TextStyle displayLarge({Color? color}) {
-    return GoogleFonts.playfairDisplay(
-      fontSize: 32,
-      fontWeight: FontWeight.w600,
+    return GoogleFonts.bebasNeue(
+      fontSize: 36,
+      fontWeight: FontWeight.w400,
       color: color ?? textPrimary,
-      letterSpacing: -0.5,
+      letterSpacing: 1.5,
       height: 1.2,
     );
   }
 
   /// Display medium - section headers
   static TextStyle displayMedium({Color? color}) {
-    return GoogleFonts.playfairDisplay(
-      fontSize: 26,
-      fontWeight: FontWeight.w500,
+    return GoogleFonts.bebasNeue(
+      fontSize: 30,
+      fontWeight: FontWeight.w400,
       color: color ?? textPrimary,
-      letterSpacing: -0.3,
+      letterSpacing: 1.0,
       height: 1.25,
     );
   }
 
   /// Headline - question titles
   static TextStyle headline({Color? color}) {
-    return GoogleFonts.dmSans(
+    return GoogleFonts.outfit(
       fontSize: 22,
       fontWeight: FontWeight.w600,
       color: color ?? textPrimary,
@@ -149,7 +149,7 @@ class QuestionnaireTheme {
 
   /// Title large - card titles
   static TextStyle titleLarge({Color? color}) {
-    return GoogleFonts.dmSans(
+    return GoogleFonts.outfit(
       fontSize: 18,
       fontWeight: FontWeight.w600,
       color: color ?? textPrimary,
@@ -160,7 +160,7 @@ class QuestionnaireTheme {
 
   /// Title medium
   static TextStyle titleMedium({Color? color}) {
-    return GoogleFonts.dmSans(
+    return GoogleFonts.outfit(
       fontSize: 16,
       fontWeight: FontWeight.w500,
       color: color ?? textPrimary,
@@ -171,7 +171,7 @@ class QuestionnaireTheme {
 
   /// Body large - descriptions
   static TextStyle bodyLarge({Color? color}) {
-    return GoogleFonts.dmSans(
+    return GoogleFonts.outfit(
       fontSize: 16,
       fontWeight: FontWeight.w400,
       color: color ?? textSecondary,
@@ -182,7 +182,7 @@ class QuestionnaireTheme {
 
   /// Body medium
   static TextStyle bodyMedium({Color? color}) {
-    return GoogleFonts.dmSans(
+    return GoogleFonts.outfit(
       fontSize: 14,
       fontWeight: FontWeight.w400,
       color: color ?? textSecondary,
@@ -193,7 +193,7 @@ class QuestionnaireTheme {
 
   /// Body small - hints
   static TextStyle bodySmall({Color? color}) {
-    return GoogleFonts.dmSans(
+    return GoogleFonts.outfit(
       fontSize: 12,
       fontWeight: FontWeight.w400,
       color: color ?? textTertiary,
@@ -204,7 +204,7 @@ class QuestionnaireTheme {
 
   /// Label - buttons and chips
   static TextStyle label({Color? color}) {
-    return GoogleFonts.dmSans(
+    return GoogleFonts.outfit(
       fontSize: 14,
       fontWeight: FontWeight.w600,
       color: color ?? textPrimary,
@@ -215,7 +215,7 @@ class QuestionnaireTheme {
 
   /// Caption - progress indicators
   static TextStyle caption({Color? color}) {
-    return GoogleFonts.dmSans(
+    return GoogleFonts.outfit(
       fontSize: 11,
       fontWeight: FontWeight.w500,
       color: color ?? textTertiary,

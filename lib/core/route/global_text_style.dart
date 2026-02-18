@@ -9,7 +9,7 @@ TextStyle globalTextStyle({
   Color color = Colors.black,
   TextDecoration? decoration,
 }) {
-  return GoogleFonts.roboto(
+  return GoogleFonts.outfit(
     fontSize: fontSize,
     fontWeight: fontWeight,
     height: lineHeight,

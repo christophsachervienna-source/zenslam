@@ -58,4 +58,7 @@ class AppColors {
   static const Color greyBack = Color(0xFF1B2D44);
   static const Color greyTextPoint = Color(0xFF6B8CAE);
   static const Color litePrimaryColor = Color(0xFF1B2D44);
+
+  // Warm white for improved readability on dark backgrounds
+  static const Color textWarm = Color(0xFFF5F0EB);
 }
