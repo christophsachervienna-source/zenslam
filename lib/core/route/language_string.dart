@@ -1,0 +1,613 @@
+import 'package:get/get.dart';
+
+class LocalString extends Translations {
+  @override
+  Map<String, Map<String, String>> get keys => {
+    'en_US': {
+      "language": "Language", // English
+      "continue": "Continue",
+      "welcome_to": "Welcome to - ",
+      "MFM_EBOOKS": "MFM EBOOKS",
+      "experience_the_power_of_divine_transformation_through_anointed_materials_from_mountain_of_fire_and_miracles_ministries":
+          "Experience the power of divine transformation through anointed materials from Mountain of Fire and Miracles Ministries",
+      "login": "Log in",
+      "sign_up": "Sign up",
+      "save": "Save",
+      "welcome_back": "Welcome back",
+      "create_account": "Create Account",
+      "mobile_number": "Mobile Number",
+      "enter_your_number_here": "Enter your number here",
+      "password": "Password",
+      "enter_your_password": "Enter your password",
+      "forgot_password?": "Forgot password?",
+      "loading": "Loading...",
+      "please_enter_your_number": "Please enter your number",
+      "please_enter_your_password": "Please enter your password",
+      "password_can't_be_less_than_8_character":
+          "Password can't be less than 8 character.",
+      "login_successful!": "Login successful!",
+      "no_internet_connection. please_check_your_network.":
+          "No Internet connection. Please check your network.",
+      "server_is_taking_too_long_to_respond. please_try_again_later.":
+          "Server is taking too long to respond. Please try again later.",
+      "something_went_wrong. please_try_again.":
+          "Something went wrong. Please try again.",
+      "server_response_was_not_in_the_expected_format.":
+          "Server response was not in the expected format.",
+      "reset_password": "Reset password",
+      "please_enter_your_number_to_reset_the_password":
+          "Please enter your number to reset the password",
+      "number": "Number",
+      "verification_code": "Verification code",
+      "we_have_to_sent_the_code_verification_to_your_phone":
+          "We have to sent the code verification to your Phone",
+      "resend_code_in": "Resend code in: ",
+      "verify": "Verify",
+      "set_new_password": "Set new password",
+      "create_your_new_password_so_you_can_share_your_memories_again":
+          "Create your new password so you can share your memories again.",
+      "new_password": "New password",
+      "confirm password": "Confirm password",
+      "enter_your_password_again": "Enter your password again",
+      "forget_password_is_successful.": "Forget password is successful.",
+      "failed_to_forget_password.": "Failed to forget password.",
+      "invalid_otp! please_enter_a_valid_number.":
+          "Invalid otp! Please enter a valid number.",
+      "otp_verification_is_successful.": "Otp verification is successful.",
+      "failed_to_otp_verification.": "Failed to otp verification.",
+      "categories": "Categories",
+      "please_enter_a_new_password": "Please enter a new password",
+      "password_must_be_at_least_8_characters_long":
+          "Password must be at least 8 characters long.",
+      "your_password_is_successfully\nchange!":
+          "Your password is successfully\nchange!",
+
+      "failed_to_reset_password": "Failed to reset password",
+      "the_passwords_do_not_match": "The passwords do not match.",
+      "resend_otp_verification_is_successful.":
+          "Resend otp verification is successful.",
+
+      "failed_to_resend_otp_verification.":
+          "Failed to resend otp verification.",
+      "name": "Name",
+      "enter_your_name_here": "Enter your name here",
+      "next": "Next",
+      "'error', all_fields_are_required": "'Error', All fields are required",
+      "invalid, enter_a_valid_international phone_number":
+          "Enter a valid international phone number with your country code.",
+      "failed": "Failed",
+      "signup_failed": 'Signup failed',
+      "error, something_went_wrong": "Error, Something went wrong",
+      "session_expired. please_login_again.":
+          "Session expired. Please login again.",
+      "invalid_otp": "Invalid OTP",
+      "otp_verifed": "OTP Verifed",
+      "verification failed": "Verification failed",
+      "password_cannot_be_empty": "Password cannot be empty",
+      "your_account_is_succesfully_created!":
+          "Your account is succesfully created!",
+      "update_failed": "Update failed",
+      "invalid_request_format": "Invalid request format",
+      "server_error": "Server error",
+      "profile": "Profile",
+      "edit_profile": "Edit Profile",
+      "change password": "Change password",
+      "notification": "Notification",
+      "rewards": "Rewards",
+      "log_out": "Log out",
+      "are_you_sure?": "Are You Sure?",
+      "do_you_want_to_log_out ?": "Do you want to log out ?",
+      "cancel": "Cancel",
+      "user_name": "User name",
+      "change_password": "Change password",
+      "current_password": "Current password",
+      "enter_your_current_password": "Enter your current password",
+      "enter_your_new_password": "Enter your new password",
+      "no_user_data_found": "No user data found",
+      "failed_to_get_user_data.": "Failed to get user data.",
+      "profile_updated_successfully!": "Profile updated successfully!",
+      "failed_to_update_profile.": "Failed to update profile.",
+      "please_enter_your_current_password":
+          "Please enter your current password",
+      "please_confirm_your_new_password": "Please confirm your new password",
+      "new_password_and_confirm_password_do_not_match":
+          "New password and confirm password do not match",
+      "new_password_must_be_different_from_the_old_one.":
+          "New password must be different from the old one.",
+      "failed_to_change_password": "Failed to change password",
+      "logout_successful.": "Logout successful.",
+      "home_flow": "Home",
+      "ebook": "Ebook",
+      "music_file": "Music file",
+      "library": "Library",
+      "earn_points!": "Earn Points!",
+      "redeem_rewards!": "Redeem Rewards!",
+      "ebooks": "Ebooks",
+      "search_here": "Search here...",
+      "no_ebook_categories_available": "No eBook categories available",
+      "see_all": "See all",
+      "no_internet_connection": "No Internet Connection",
+      "no_ebooks_found_in_this_category.": "No eBooks found in this category.",
+      "no_books_found_in_this_category.": "No books found in this category.",
+      "music_files": "Music Files",
+      "description": "Description",
+      "downloading": "Downloading...",
+      "duration": "Duration",
+      "download_complete": "Download Complete",
+      "offlinebook": "Offline Book",
+      "favourite": "Favourite",
+      "purchase_books": "Purchase Books",
+      "no_offline_books_found.": "No offline books found.",
+      "unknown_author": "Unknown Author",
+      "no_description": "No description",
+      "payment": "Payment",
+      "no_categories_found": "No categories found",
+      "no_categories_available": "No categories available",
+      "welcome_back!": "Welcome Back!",
+      "explore_now": "Explore now",
+      "details": "Details",
+      "no_book_data_available": "No book data available",
+      "related_books": "Related Books",
+      "no_slider_data_found": "No slider data found",
+      "failed_to_get_slider_data.": "Failed to get slider data.",
+      "permission_denied , storage_permission_is_required_to_download_the_file":
+          "Permission Denied , Storage permission is required to download the file.",
+      "no_recommended_books_found.": "No recommended books found.",
+      "failed_to_load_recommended_books.": "Failed to load recommended books.",
+      "no_best_selling_books_found.": "No best selling books found.",
+      "failed_to_load_best_selling_books.":
+          "Failed to load best selling books.",
+      "notifications": "Notifications",
+      "hello! welcome_back": "Hello! Welcome Back",
+      "ebooks_search": "Ebooks Search",
+      "audio_books_search": "Audio Books Search",
+      "buy": "Buy",
+      "pages": "Pages",
+      "length": "Length",
+      "format": "Format",
+      "publisher": "Publisher",
+      "release": "Release",
+      "go": "Go",
+      "points": "Points",
+      "read": "Read",
+      "earn": "Earn",
+      "more_to_reach": "more to reach",
+      "success": "Success",
+      "registration_successful": "Registration Successful",
+      "no_point_data_available.": "No point data available.",
+      "use": "Use ",
+      "points_to_ead": " points to Read ",
+      "notifications_fetched_successfully.":
+          "Notifications fetched successfully.",
+      "failed_to_fetch_notifications.": "Failed to fetch notifications.",
+      "unread": "Unread",
+      "no_favourite_books": "No favourite books found",
+      "no_purchased_books_available.": "No purchased books available.",
+      "no_redeemable_rewards_available.": "No redeemable rewards available.",
+      "read_now": "Read Now",
+      "play_now": "Play Now",
+      "the_book_is_not_found": "The Book is not Found",
+      "incorrect_phone_number_please_try_again":
+          "Incorrect phone number please try again",
+      "email_address": "Email Address",
+      "chat_with_us": "Chat with us",
+      "request_an_ebook": "Request an ebook",
+      "no_related_books_found": "No related books found",
+      "download": "Download",
+      ////////////////////
+    },
+    'es_ES': {
+      "language": "Idioma", // Spanish
+      "continue": "Continuar",
+      "welcome_to": "Bienvenido a -",
+      "MFM_EBOOKS": "LIBROS ELECTRÓNICOS MFM",
+      "experience_the_power_of_divine_transformation_through_anointed_materials_from_mountain_of_fire_and_miracles_ministries":
+          "Experimenta el poder de la transformación divina a través de materiales ungidos del Ministerio Montaña de Fuego y Milagros.",
+      "login": "Iniciar sesión",
+      "sign_up": "Registrarse",
+      "save": "Ahorrar",
+      "welcome_back": "Bienvenido de nuevo",
+      "create_account": "Crear cuenta",
+      "mobile_number": "Número de Móvil",
+      "enter_your_number_here": "Introduce tu número aquí",
+      "password": "Contraseña",
+      "enter_your_password": "Ingrese su contraseña",
+      "forgot_password?": "¿Olvide contraseña?",
+      "loading": "Cargand...",
+      "please_enter_your_number": "Por favor ingrese su número",
+      "please_enter_your_password": "Por favor, introduzca su contraseña",
+      "password_can't_be_less_than_8_character":
+          "La contraseña no puede tener menos de 8 caracteres.",
+      "login_successful!": "¡Inicio de sesión exitoso!",
+      "no_internet_connection. please_check_your_network.":
+          "No hay conexión a internet. Por favor, revisa tu red.",
+      "server_is_taking_too_long_to_respond. please_try_again_later.":
+          "El servidor está tardando demasiado en responder. Inténtalo de nuevo más tarde.",
+
+      "something_went_wrong. please_try_again.":
+          "Algo salió mal. Inténtalo de nuevo.",
+
+      "server_response_was_not_in_the_expected_format.":
+          "La respuesta del servidor no tuvo el formato esperado.",
+      "reset_password": "Restablecer contraseña",
+      "please_enter_your_number_to_reset_the_password":
+          "Por favor ingrese su número para restablecer la contraseña",
+      "number": "Número",
+      "verification_code": "Código de verificación",
+      "we_have_to_sent_the_code_verification_to_your_phone":
+          "Necesitamos enviar el código de verificación a su teléfono.",
+      "resend_code_in": "Reenviar código en",
+      "verify": "Verificar",
+      "set_new_password": "Establecer nueva contraseña",
+      "create_your_new_password_so_you_can_share_your_memories_again":
+          "Crea tu nueva contraseña para que puedas volver a compartir tus recuerdos.",
+      "new_password": "Nueva contraseña",
+      "confirm password": "Confirmar Contraseña",
+      "enter_your_password_again":
+          "Por favor, introduzca su contraseña de nuevo",
+      "forget_password_is_successful.":
+          "El olvido  contraseña  realizó correctamente.",
+      "failed_to_forget_password.": "No se pudo olvidar la contraseña.",
+      "invalid_otp! please_enter_a_valid_number.":
+          "¡El OTP no es válido! Ingrese un número válido.",
+      "otp_verification_is_successful.": "La verificación OTP es exitosa.",
+      "failed_to_otp_verification.": "Error en la verificación OTP.",
+      "categories": "Categorías",
+      "please_enter_a_new_password":
+          "Por favor, introduzca una nueva contraseña",
+      "password_must_be_at_least_8_characters_long":
+          "La contraseña debe tener al menos 8 caracteres.",
+
+      "your_password_is_successfully\nchange!":
+          "Tu contraseña es «successfully\nchange».",
+
+      "failed_to_reset_password": "No se pudo restablecer la contraseña",
+      "the_passwords_do_not_match": "Las contraseñas no coinciden.",
+      "resend_otp_verification_is_successful.":
+          "El reenvío de verificación OTP  exitoso.",
+      "failed_to_resend_otp_verification.":
+          "Error al reenviar la verificación OTP.",
+      "name": "Nombre",
+      "enter_your_name_here": "Introduce tu nombre aquí",
+      "next": "Próximo",
+      "'error', all_fields_are_required":
+          "Error, todos los campos son obligatorios",
+      "invalid, enter_a_valid_international phone_number":
+          "Introduzca un número de teléfono internacional válido con el código de su país.",
+      "failed": "Fallida",
+      "signup_failed": "'Error de registro'",
+      "error, something_went_wrong": "Error, algo salió mal",
+      "session_expired. please_login_again.":
+          "sesión  expirado. Vuelve a iniciar sesión.",
+      "invalid_otp": "OTP no válido",
+      "otp_verifed": "OTP verificado",
+      "verification failed": "Verificación fallida",
+      "password_cannot_be_empty": "La contraseña no puede estar vacía",
+      "your_account_is_succesfully_created!": "¡Su cuenta creada exitosamente!",
+      "update_failed": "La actualización falló",
+      "invalid_request_format": "Formato de solicitud no válido",
+      "server_error": "Error del servidor",
+      "profile": "Perfil",
+      "edit_profile": "Editar perfil",
+      "change password": "Cambiar la contraseña",
+      "notification": "Notificación",
+      "rewards": "Recompensas",
+      "log_out": "Finalizar la sesión",
+      "are_you_sure?": "¿Estás seguro?",
+      "do_you_want_to_log_out ?": "¿Quieres cerrar la sesión?",
+      "cancel": "Cancelar",
+      "user_name": "Nombre de usuario",
+      "change_password": "Cambiar la contraseña",
+      "current_password": "Contraseña actual",
+      "enter_your_current_password": "Ingrese su contraseña actual",
+      "enter_your_new_password": "Ingrese su nueva contraseña",
+      "no_user_data_found": "No se encontraron datos de usuario",
+      "failed_to_get_user_data.":
+          "No se pudieron obtener los datos del usuario.",
+      "profile_updated_successfully!": "¡Perfil actualizado exitosamente!",
+      "failed_to_update_profile.": "Error al actualizar el perfil.",
+      "please_enter_your_current_password":
+          "Por favor, introduzca su contraseña actual",
+      "please_confirm_your_new_password":
+          "Por favor, confirme su nueva contraseña",
+      "new_password_and_confirm_password_do_not_match":
+          "La nueva contraseña y la contraseña de confirmación no coinciden",
+      "new_password_must_be_different_from_the_old_one.":
+          "La nueva contraseña debe ser diferente de la anterior.",
+      "failed_to_change_password": "No se pudo cambiar la contraseña",
+      "logout_successful.": "Cierre de sesión exitoso.",
+      "home_flow": "Hogar",
+      "ebook": "Libro electrónico",
+      "music_file": "Archivo de música",
+      "library": "Biblioteca",
+      "earn_points!": "¡Gana puntos!",
+      "redeem_rewards!": "¡Canjea recompensas!",
+      "ebooks": "Libros electrónicos",
+      "search_here": "Buscar aquí...",
+      "no_ebook_categories_available":
+          "No hay categorías de libros electrónicos disponibles",
+      "see_all": "Ver todo",
+      "no_internet_connection": "Sin conexión a Internet",
+      "no_ebooks_found_in_this_category.":
+          "No se encontraron libros electrónicos en esta categoría.",
+      "no_books_found_in_this_category.":
+          "No se encontraron libros en esta categoría.",
+      "music_files": "Archivos de música",
+      "description": "Descripción",
+      "downloading": "Descargando...",
+      "duration": "Duración",
+      "download_complete": "Descargar completa",
+      "offlinebook": "Libro sin conexión",
+      "favourite": "Favorito",
+      "purchase_books": "Comprar libros",
+      "no_offline_books_found.": "No se encontraron libros sin conexión.",
+      "unknown_author": "Autor desconocido",
+      "no_description": "Sin descripción",
+      "payment": "Pago",
+      "no_categories_found": "No se encontraron categorías",
+      "no_categories_available": "No hay categorías disponibles",
+      "welcome_back!": "¡Bienvenido de nuevo!",
+      "explore_now": "Explorar ahora",
+      "details": "Detalles",
+      "no_book_data_available": "No hay datos de libros disponibles",
+      "related_books": "Libros relacionados",
+      "no_slider_data_found": "No se encontraron datos del control deslizante",
+      "failed_to_get_slider_data.":
+          "No se pudieron obtener los datos del control deslizante.",
+      "permission_denied , storage_permission_is_required_to_download_the_file":
+          "Permiso denegado, se requiere permiso de almacenamiento para descargar el archivo.",
+      "no_recommended_books_found.": "No se encontraron libros recomendados.",
+      "failed_to_load_recommended_books.":
+          "Error al cargar los libros recomendados.",
+      "no_best_selling_books_found.": "No se encontraron libros más vendidos.",
+      "failed_to_load_best_selling_books.":
+          "No se pudieron cargar los libros más vendidos.",
+      "notifications": "Notificaciones",
+      "hello! welcome_back": "¡Hola! Bienvenido de nuevo",
+      "ebooks_search": "Búsqueda de libros electrónicos",
+      "audio_books_search": "Búsqueda de audiolibros",
+      "buy": "Comprar",
+      "pages": "Página",
+      "length": "Longitud",
+      "format": "Formato",
+      "publisher": "Editor",
+      "release": "Liberar",
+      "go": "Ir",
+      "points": "Agujas",
+      "read": "Leer",
+      "earn": "Ganar",
+      "more_to_reach": "más para alcanzar",
+      "success": "Éxito",
+      "registration_successful": "Registro exitoso",
+      "no_point_data_available.": "No hay datos de puntos disponibles.",
+      "use": "Usar ",
+      "points_to_ead": " puntos para leer ",
+      "notifications_fetched_successfully.":
+          "Notificaciones obtenidas exitosamente.",
+      "failed_to_fetch_notifications.":
+          "No se pudieron obtener las notificaciones.",
+      "unread": "No leído",
+      "no_purchased_books_available.": "No hay libros comprados disponibles.",
+      "no_redeemable_rewards_available.":
+          "No hay recompensas canjeables disponibles.",
+      "read_now": "Leer ahora",
+      "play_now": "Jugar ahora",
+      "no_favourite_books": "No se encontraron libros favoritos",
+      "the_book_is_not_found": "El libro no se encuentra",
+      "incorrect_phone_number_please_try_again":
+          "Número de teléfono incorrecto, inténtelo de nuevo.",
+      "email_address": "Dirección de correo electrónico",
+      "chat_with_us": "Chatea con nosotros",
+      "request_an_ebook": "Solicitar un libro electrónico",
+      "no_related_books_found": "No se encontraron libros relacionados",
+      "download": "Descargar",
+      /////////////
+    },
+    'fr_FR': {
+      "language": "Langue", // French
+      "continue": "Continuer",
+      "welcome_to": "Bienvenue à -",
+      "MFM_EBOOKS": "LIVRES ÉLECTRONIQUES MFM",
+      "experience_the_power_of_divine_transformation_through_anointed_materials_from_mountain_of_fire_and_miracles_ministries":
+          "Faites l’expérience de la puissance de la transformation divine à travers les matériaux oints du Ministère de la Montagne de Feu et des Miracles.",
+      "login": "Se connecter",
+      "sign_up": "S'inscrire",
+      "save": "sauver",
+      "welcome_back": "Content de te revoir",
+      "create_account": "Créer compte",
+      "mobile_number": "Numéro de Mobile",
+      "enter_your_number_here": "Entrez votre numéro ici",
+      "password": "Mot de passe",
+      "enter_your_password": "Entrez votre mot de passe",
+      "forgot_password?": "Mot de passe oublié?",
+      "loading": "Chargement...",
+      "please_enter_your_number": "Veuillez entrer votre numéro",
+      "please_enter_your_password": "Veuillez entrer votre mot de passe",
+      "password_can't_be_less_than_8_character":
+          "Le mot de passe ne peut pas comporter moins de 8 caractères.",
+      "login_successful!": "Connexion réussie !",
+      "no_internet_connection. please_check_your_network.":
+          "Pas de connexion internet. Veuillez vérifier votre réseau.",
+      "server_is_taking_too_long_to_respond. please_try_again_later.":
+          "Le serveur met trop de temps à répondre. Veuillez réessayer ultérieurement.",
+
+      "something_went_wrong. please_try_again.":
+          "Une erreur s'est produite. Veuillez réessayer.",
+      "server_response_was_not_in_the_expected_format.":
+          "La réponse du serveur n’était pas au format attendu.",
+      "reset_password": "Réinitialiser le mot de passe",
+      "please_enter_your_number_to_reset_the_password":
+          "Veuillez saisir votre nombre pour réinitialiser le mot de passe",
+      "number": "Nombre",
+      "verification_code": "Le code de vérification",
+      "we_have_to_sent_the_code_verification_to_your_phone":
+          "Nous devons envoyer le code de vérification sur votre téléphone.",
+      "resend_code_in": "Renvoyer le code dans",
+      "verify": "vérifier",
+      "set_new_password": "Définir nouveau mot de passe",
+      "create_your_new_password_so_you_can_share_your_memories_again":
+          "Créez votre nouveau mot de passe pour pouvoir à nouveau partager vos souvenirs.",
+
+      "new_password": "Nouveau mot de passe",
+      "confirm password": "Confirmez le mot de passe",
+      "enter_your_password_again":
+          "Veuillez saisir à nouveau votre mot de passe",
+      "forget_password_is_successful.": "L'oubli du mot de passe a réussi.",
+      "failed_to_forget_password.": "Impossible d'oublier le mot de passe.",
+      "invalid_otp! please_enter_a_valid_number.":
+          "Otp non valide ! Veuillez saisir un numéro valide.",
+      "otp_verification_is_successful.": "Vérification OTP réussie.",
+      "failed_to_otp_verification.": "La vérification OTP a échoué.",
+      "categories": "Catégories",
+      "please_enter_a_new_password": "Veuillez entrer un nouveau mot de passe",
+      "password_must_be_at_least_8_characters_long":
+          "Le mot de passe doit comporter au moins 8 caractères.",
+
+      "your_password_is_successfully\nchange!":
+          "Votre mot de passe est successfully\nchange !",
+      "failed_to_reset_password":
+          "La réinitialisation du mot de passe a échoué",
+      "the_passwords_do_not_match": "Les mots de passe ne correspondent pas.",
+      "resend_otp_verification_is_successful.":
+          "La vérification du renvoi OTP  réussi.",
+      "failed_to_resend_otp_verification.":
+          "Échec du renvoi de la vérification OTP.",
+      "name": "Nom",
+      "enter_your_name_here": "Entrez votre nom ici",
+      "next": "Suivant",
+      "'error', all_fields_are_required":
+          "Erreur, tous les champs sont obligatoires.",
+
+      "invalid, enter_a_valid_international phone_number":
+          "Entrez un numéro de téléphone international valide avec l'indicatif de votre pays.",
+      "failed": "Échec",
+      "signup_failed": "L'inscription a échoué",
+      "error, something_went_wrong": "Erreur, quelque chose s'est mal passé",
+      "session_expired. please_login_again.":
+          "Session expirée. Veuillez vous reconnecter.",
+      "invalid_otp": "OTP invalide",
+      "otp_verifed": "OTP vérifié",
+      "verification failed": "La vérification a échoué",
+      "password_cannot_be_empty": "Le mot de passe ne peut pas être vide",
+      "your_account_is_succesfully_created!": "Votre compte  c avec succès !",
+      "update_failed": "La mise à jour a échoué",
+      "invalid_request_format": "Format de demande invalide",
+      "server_error": "Erreur du serveur",
+      "profile": "Profil",
+      "edit_profile": "Modifier le profil",
+      "change password": "Changer le mot de passe",
+      "notification": "Notification",
+      "rewards": "Récompenses",
+      "log_out": "Se déconnecter",
+      "are_you_sure?": "Es-tu sûr?",
+      "do_you_want_to_log_out ?": "Voulez-vous vous déconnecter ?",
+      "cancel": "Annuler",
+      "user_name": "Nom d'utilisateur",
+      "change_password": "Changer le mot de passe",
+      "current_password": "Mot de passe actuel",
+      "enter_your_current_password": "Entrez votre mot de passe actuel",
+      "enter_your_new_password": "Entrez votre nouveau mot de passe",
+      "no_user_data_found": "Aucune donnée utilisateur trouvée",
+      "failed_to_get_user_data.":
+          "Impossible d'obtenir les données utilisateur.",
+      "profile_updated_successfully!": "Profil mis à jour avec succès !",
+      "failed_to_update_profile.": "Échec de la mise à jour du profil.",
+      "please_enter_your_current_password":
+          "Veuillez entrer votre mot de passe actuel",
+      "please_confirm_your_new_password":
+          "Veuillez confirmer votre nouveau mot de passe",
+      "new_password_and_confirm_password_do_not_match":
+          "Le nouveau mot de passe et le mot de passe de confirmation ne correspondent pas",
+      "new_password_must_be_different_from_the_old_one.":
+          "Le nouveau mot de passe doit être différent de l'ancien.",
+      "failed_to_change_password": "Impossible de changer le mot de passe",
+      "logout_successful.": "Déconnexion réussie.",
+      "home_flow": "Maison",
+      "ebook": "Livre électronique",
+      "music_file": "Fichier de musique",
+      "library": "Bibliothèque",
+      "earn_points!": "Gagnez des points !",
+      "redeem_rewards!": "Échangez des récompenses!",
+      "ebooks": "Livres électroniques",
+      "search_here": "Rechercher ici...",
+      "no_ebook_categories_available":
+          "Aucune catégorie de livres électroniques disponible",
+      "see_all": "Tout voir",
+      "no_internet_connection": "Pas de connexion Internet",
+      "no_ebooks_found_in_this_category.":
+          "Aucun livre électronique trouvé dans cette catégorie.",
+      "no_books_found_in_this_category.":
+          "Aucun livre trouvé dans cette catégorie.",
+      "music_files": "Fichiers musicaux",
+      "description": "Description",
+      "downloading": "Téléchargement...",
+      "duration": "Durée",
+      "download_complete": "Télécharger complet",
+      "offlinebook": "Livre hors ligne",
+      "favourite": "Préféré",
+      "purchase_books": "Acheter des livres",
+      "no_offline_books_found.": "Aucun livre hors ligne trouvé.",
+      "unknown_author": "Auteur inconnu",
+      "no_description": "Aucune description",
+      "payment": "Paiement",
+      "no_categories_found": "Aucune catégorie trouvée",
+      "no_categories_available": "Aucune catégorie disponible",
+      "welcome_back!": "Content de te revoir!",
+      "explore_now": "Explorez maintenant",
+      "details": "Détails",
+      "no_book_data_available": "Aucune donnée de livre disponible",
+      "related_books": "Livres connexes",
+      "no_slider_data_found": "Aucune donnée de curseur trouvée",
+      "failed_to_get_slider_data.":
+          "Échec de l'obtention des données du curseur.",
+      "permission_denied , storage_permission_is_required_to_download_the_file":
+          "Autorisation refusée, une autorisation de stockage est requise pour télécharger le fichier.",
+      "no_recommended_books_found.": "Aucun livre recommandé trouvé.",
+      "failed_to_load_recommended_books.":
+          "Échec du chargement des livres recommandés.",
+      "no_best_selling_books_found.": "Aucun livre à succès trouvé.",
+      "failed_to_load_best_selling_books.":
+          "Impossible de charger les livres les plus vendus.",
+      "notifications": "Notifications",
+      "hello! welcome_back": "Bonjour ! Bienvenue à nouveau",
+      "ebooks_search": "Recherche de livres électroniques",
+      "audio_books_search": "Recherche de livres audio",
+      "buy": "Acheter",
+      "pages": "Page",
+      "length": "Longueur",
+      "format": "Format",
+      "publisher": "Éditeur",
+      "release": "Libérer",
+      "go": "Aller",
+      "points": "Points",
+      "read": "Lire",
+      "earn": "Gagner",
+      "more_to_reach": "plus à atteindre",
+      "success": "Succès",
+      "registration_successful": "Inscription réussie",
+      "no_point_data_available.": "Aucune donnée ponctuelle disponible.",
+      "use": "Utiliser ",
+      "points_to_ead": " points à lire ",
+      "notifications_fetched_successfully.":
+          "Les notifications ont été récupérées avec succès.",
+      "failed_to_fetch_notifications.":
+          "Échec de la récupération des notifications.",
+      "unread": "Non lu",
+      "no_purchased_books_available.": "Aucun livre acheté disponible.",
+      "no_redeemable_rewards_available.":
+          "Aucune récompense échangeable disponible.",
+      "read_now": "Lire maintenant",
+      "play_now": "Jouer maintenant",
+      "no_favourite_books_found": "Aucun livre favori trouvé",
+      "the_book_is_not_found": "Le livre n'est pas trouvé",
+      "incorrect_phone_number_please_try_again":
+          "Numéro de téléphone incorrect, veuillez réessayer",
+      "email_address": "Adresse email",
+      "chat_with_us": "Discutez avec nous",
+      "request_an_ebook": "Demander un ebook",
+      "no_related_books_found": "Aucun livre associé trouvé",
+      "download": "Télécharger",
+      ///////////////
+    },
+  };
+}

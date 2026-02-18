@@ -1,49 +1,16 @@
-# ZenSlam
+# derkleineprinz
 
-**Neuroscience-based mental training for tennis players.**
-
-A Flutter mobile application delivering 100+ guided audio sessions for tennis mental performance improvement.
-
-## Tech Stack
-
-- **Mobile:** Flutter (iOS & Android)
-- **State Management:** Riverpod
-- **Backend:** Supabase (PostgreSQL, Auth, Storage, Edge Functions)
-- **AI:** OpenAI GPT API
-- **Subscriptions:** RevenueCat
-- **Analytics:** Firebase Analytics + Mixpanel
-- **Admin Panel:** React/Next.js
-
-## Project Structure
-
-```
-zenslam/
-├── app/                    # Flutter mobile app
-├── admin/                  # React/Next.js admin panel
-├── supabase/              # Supabase migrations and functions
-└── docs/                  # Documentation
-```
+A new Flutter project.
 
 ## Getting Started
 
-### Prerequisites
+This project is a starting point for a Flutter application.
 
-- Flutter SDK 3.x+
-- Dart 3.x+
-- Node.js 18+ (for admin panel)
-- Supabase CLI
+A few resources to get you started if this is your first Flutter project:
 
-### Setup
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-1. Clone the repository
-2. Install Flutter dependencies: `cd app && flutter pub get`
-3. Configure environment variables
-4. Run the app: `flutter run`
-
-## Documentation
-
-See `ZENSLAM_FLUTTER_APP_SPECIFICATION.md` for complete technical specification.
-
-## License
-
-Proprietary - All rights reserved.
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

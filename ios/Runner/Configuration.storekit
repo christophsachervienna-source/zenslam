@@ -1,0 +1,146 @@
+{
+  "identifier" : "A1B2C3D4",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "398.99",
+      "familyShareable" : false,
+      "internalID" : "F8E7D6C5",
+      "localizations" : [
+        {
+          "description" : "Unlock MaleSync Pro forever with a single purchase.",
+          "displayName" : "Lifetime Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "malesync_pro_lifetime",
+      "referenceName" : "Lifetime Pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "B2C3D4E5",
+      "localizations" : [
+
+      ],
+      "name" : "Malesync Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "12.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "C3D4E5F6",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly access to all MaleSync Pro features.",
+              "displayName" : "Monthly Pro",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "malesync_pro_monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly Pro",
+          "subscriptionGroupID" : "B2C3D4E5",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "89.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "D4E5F6A7",
+          "introductoryOffer" : {
+            "displayPrice" : "0",
+            "internalID" : "E5F6A7B8",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P2W"
+          },
+          "localizations" : [
+            {
+              "description" : "Annual access to all MaleSync Pro features with a 14-day free trial.",
+              "displayName" : "Annual Pro",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "malesync_pro_yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Annual Pro",
+          "subscriptionGroupID" : "B2C3D4E5",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}
